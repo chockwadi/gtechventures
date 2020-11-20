@@ -2,6 +2,7 @@ import React from 'react';
 import Home from '../Containers/Home'
 import Login from '../Containers/Login'
 import Signup from '../Containers/Signup'
+import ChStation from '../Containers/ChStation'
 
 import {
     BrowserRouter as Router,
@@ -14,8 +15,9 @@ export default function AppRuter() {
         <Router>
             <Switch>
                 <Route exact path="/" render={() => <Home />}/>
-                <Route path="/login" render={() => <Login />}/>
-                <Route path="/signup" render={() => <Signup />}/>
+                <Route exact path="/login" render={() => <Login />}/>
+                <Route exact path="/signup" render={() => <Signup />}/>
+                <Route path="/charging-station/:id" render={() => <ChStation />}/>
             </Switch>
         </Router>
     )

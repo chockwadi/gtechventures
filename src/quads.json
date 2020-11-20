@@ -120,28 +120,5 @@
       "maxFlightTime": "18min",
       "charge": "93%"
     }
-  ],
-  "users": [
-    {
-      "fname": "shoaib",
-      "lname": "ismail",
-      "phone": "03142279909",
-      "email": "chockwadi.shoaib@gmail.com",
-      "id": 1
-    }
-  ],
-  "charginStations":[
-    {
-      "name":"station 1",
-      "location":"location 1"
-    },
-    {
-      "name":"station 2",
-      "location":"location 2"
-    },
-    {
-      "name":"station 3",
-      "location":"location 3"
-    }
   ]
 }

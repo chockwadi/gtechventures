@@ -17,11 +17,17 @@ Functional Requirements
 Get the drones list from quads.json and populate the charging stations.
 
 There are 3 charging stations and each can accomodate up to 10 drones.
+
 The charging stations are well scattered around town and will not be moved once installed.
+
 To rent a drone, a user must be registered in the system. For this the following information is needed: first name, last name, emergency phone number, email.
+
 A user is not able to register more than once with the same email.
+
 Renting is allowed by entering the user's valid email to login. Only one rental is allowed at once per member.
+
 Once the rental is started, a countdown begins for that member. The rental maximum for each drone depends on its  maximum amount of flight time.
+
 The drone is assumed to be flying from the moment it leaves the charging station until the moment it is returned or it's countdown finishes.
 Returns can only be made to free slots in charging stations. Once returned:
 
