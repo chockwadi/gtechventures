@@ -16,8 +16,13 @@
     font-weight: 500;
     cursor: pointer;
 }
+.quadsdiv .ant-btn-primary{
+  background: #839b97;
+  border-color: #839b97;
+  color: #fff;
+}
 .quadsdiv{
-  background-color: #40BFB3;
+  background-color: #34626c;
   padding: 20px;
   margin: 10px 20px;
   border: 1px solid #e2e1e1;
@@ -25,4 +30,17 @@
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+}
+#logout{
+  margin: 10px 0 0 0;
+
+}
+.ant-progress-text{
+  color: #fff;
+}
+.chargingText{
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  text-align: center;
 }

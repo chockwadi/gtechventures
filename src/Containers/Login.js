@@ -1,23 +1,27 @@
 import React from 'react';
-import { signup } from '../APIHelpers/Users'
-import { Form, Input, InputNumber, Row, Col, Button, Typography } from 'antd';
+import { Form, Input, message, Row, Col, Button, Typography } from 'antd';
+import { useHistory } from "react-router-dom";
 
 function Signup() {
-    React.useEffect(() => {
-        let data = {
-            fname: "shoaib",
-            lname: "ismail",
-            phone: "03142279909",
-            email: "chockwadi.shoaib@gmail.com"
+    let history = useHistory();
+
+    const formHandler = (values) => {
+        if(localStorage.getItem("users")){
+            let users =  JSON.parse(localStorage.getItem("users"))
+           if(users.filter(i => i.email == values.email).length > 0 ){
+            if(users.filter(i => i.email == values.email && i.password == values.password).length > 0 ){
+                localStorage.setItem("logedInUser", JSON.stringify({...values}))
+                history.push("/")
+            }else{
+                message.error("wrong password...")
+            }
+           }else{
+               message.error("user does not exists. please signup....")
+           }
+        }else{
+            message.error("user does not exists. please signup....")
         }
-        signup(data)
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
+    }
     return (
         <>
             <Row>
@@ -25,14 +29,14 @@ function Signup() {
                 <Col  xs={20} sm={20} md={12} lg={12}>
                     <div id='signupform'>
                         <h3 style={{textAlign: "center"}}>Login with Your Account</h3>
-                        <Form layout="vertical" name="userForm">
-                            <Form.Item name="fname" label="Email" rules={[{ required: true }]}>
+                        <Form layout="vertical" name="userForm" onFinish={formHandler}>
+                            <Form.Item name="email" label="Email" rules={[{ required: true }]}>
                                 <Input />
                             </Form.Item>
                             <Form.Item name="password" label="Password" rules={[{ required: true }]}>
                                 <Input />
                             </Form.Item>
-                            <Button type="primary" block>Login</Button>
+                            <Button type="primary" htmlType="submit" block>Login</Button>
                         </Form>
                     </div>
                 </Col>
