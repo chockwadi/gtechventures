@@ -15,4 +15,6 @@ after renting a drone you can land it anywhere you want (in free slots)
 you can see rented drone with timer on home page
 if you not land your drone it will crash and you can see crash dron on homepage
 after crash drone you will be blocked and drone will go to any free slot at charging station with 0% charging where we can charge that drone
+there is signin and signup pages 
+after sign up you do not need to signin
 Thank You
